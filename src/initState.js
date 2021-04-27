@@ -1,1 +1,3 @@
-export default () => ({ projects: {} });
+const initState = () => ({ projects: {} });
+
+export default initState;
