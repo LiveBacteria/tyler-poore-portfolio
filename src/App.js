@@ -11,7 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   background: {
-    backgroundImage: `url(${process.env.PUBLIC_URL + "/landing_bg.png"})`,
+    backgroundImage: `url(${process.env.PUBLIC_URL + "/landing_bg.jpg"})`,
     minHeight: "100%",
     minWidth: "100%",
     backgroundRepeat: "no-repeat",
