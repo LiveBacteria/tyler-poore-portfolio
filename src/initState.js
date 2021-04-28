@@ -1,3 +1,3 @@
-const initState = () => ({ projects: {} });
+const initState = () => ({ projects: {}, tweets: {} });
 
 export default initState;
