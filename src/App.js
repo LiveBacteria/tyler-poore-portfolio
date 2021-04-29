@@ -29,6 +29,13 @@ function App() {
   const [state, dispatch] = useReducer(reducer, {}, initState);
   const classes = useStyles();
 
+  useEffect(() => {
+    // Get tweets and projects
+    // Possibly subscribe to socket
+    // github-npm api
+    // setup env variables for api key and auth
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Container className={`${classes.background} ${classes.main}`}>
