@@ -1,21 +1,16 @@
 // MaterialUI Imports
-<<<<<<< Updated upstream
-import { Container } from "@material-ui/core";
-=======
 import { Container, Paper, Card, Typography } from "@material-ui/core";
->>>>>>> Stashed changes
 import { makeStyles } from "@material-ui/core/styles";
+import ProjectCard from "../components/ProjectCard";
 
 const useStyles = makeStyles((theme) => ({
   text: {
     fontFamily: theme.typography.fontFamily,
     color: theme.typography.color,
   },
-<<<<<<< Updated upstream
-=======
   main: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -30,16 +25,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
   },
->>>>>>> Stashed changes
 }));
 
 const Landing = ({ state, dispatch }) => {
+  console.log("repos?", state);
   const classes = useStyles();
   return (
-<<<<<<< Updated upstream
-    <Container>
-      <h1 className={classes.text}>Welcome to my portfolio.</h1>
-=======
     <Container className={classes.main}>
       <Paper className={classes.surface}>
         <h1>Welcome to my portfolio.</h1>
@@ -47,7 +38,11 @@ const Landing = ({ state, dispatch }) => {
           My name is Tyler, I am a full stack web developer.
         </Typography>
       </Paper>
->>>>>>> Stashed changes
+      {state.projects.length > 0 && typeof state.projects[0] !== "undefined"
+        ? state.projects.map((repo, index) => {
+            return <ProjectCard repo={repo} />;
+          })
+        : ""}
     </Container>
   );
 };

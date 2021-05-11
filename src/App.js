@@ -1,7 +1,11 @@
+// React Imports
 import { useReducer, useEffect } from "react";
 import initState from "./initState";
 import reducer from "./reducers";
 import Landing from "./pages/Landing";
+
+// Services Imports
+import { getRepos } from "./services/ghHandler";
 
 // MaterialUI Imports
 import { theme } from "./themes/theme.js";
@@ -29,22 +33,22 @@ function App() {
   const [state, dispatch] = useReducer(reducer, {}, initState);
   const classes = useStyles();
 
-<<<<<<< Updated upstream
-=======
-  useEffect(() => {
+  useEffect(async () => {
     // Get tweets and projects
     // Possibly subscribe to socket
     // github-npm api
     // setup env variables for api key and auth
     // Make call for github user repos and repo information
-    // ghHandler.get();
+
+    dispatch({ type: "getRepos" });
+    let repos = await getRepos();
+    dispatch({ type: "updateRepos", item: repos });
   }, []);
 
->>>>>>> Stashed changes
   return (
     <ThemeProvider theme={theme}>
       <Container className={`${classes.background} ${classes.main}`}>
-        <Landing state dispatch />
+        <Landing state={state} dispatch={dispatch} />
       </Container>
     </ThemeProvider>
   );
