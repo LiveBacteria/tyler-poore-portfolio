@@ -29,6 +29,18 @@ function App() {
   const [state, dispatch] = useReducer(reducer, {}, initState);
   const classes = useStyles();
 
+<<<<<<< Updated upstream
+=======
+  useEffect(() => {
+    // Get tweets and projects
+    // Possibly subscribe to socket
+    // github-npm api
+    // setup env variables for api key and auth
+    // Make call for github user repos and repo information
+    // ghHandler.get();
+  }, []);
+
+>>>>>>> Stashed changes
   return (
     <ThemeProvider theme={theme}>
       <Container className={`${classes.background} ${classes.main}`}>
