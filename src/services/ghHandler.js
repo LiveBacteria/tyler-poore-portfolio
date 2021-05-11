@@ -3,7 +3,10 @@ import GitHub from "github-api";
 // Select specific repositories from my github
 const selectRepos = (allRepos) => {
   let repos = allRepos.map((repo, index) => {
-    if (index === 0 || index === 1) {
+    if (
+      repo.name === "tyler-poore-portfolio" ||
+      repo.name === "magic-researcher-game"
+    ) {
       return repo;
     }
   });
