@@ -27,5 +27,12 @@ export const theme = createMuiTheme({
     profile: "#fff",
     boxShadow: "0 3px 5px 2px #888888",
   },
+  surface: {
+    display: "flex",
+    justifyContent: "center",
+    background: "grey",
+    color: "white",
+    opacity: "0.95",
+  },
   spacing: 8,
 });
