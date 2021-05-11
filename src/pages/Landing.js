@@ -1,6 +1,7 @@
 // MaterialUI Imports
 import { Container, Paper, Card, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import Loading from "../components/Loading";
 import ProjectCard from "../components/ProjectCard";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,7 +31,9 @@ const useStyles = makeStyles((theme) => ({
 const Landing = ({ state, dispatch }) => {
   console.log("repos?", state);
   const classes = useStyles();
-  return (
+  return state.loading ? (
+    <Loading />
+  ) : (
     <Container className={classes.main}>
       <Paper className={classes.surface}>
         <h1>Welcome to my portfolio.</h1>
