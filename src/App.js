@@ -1,15 +1,23 @@
 // React Imports
 import { useReducer, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory,
+} from "react-router-dom";
 import initState from "./initState";
 import reducer from "./reducers";
 import Landing from "./pages/Landing";
+import Bio from "./pages/Bio";
+import FAB from "./components/FAB";
 
 // Services Imports
 import { getRepos } from "./services/ghHandler";
 
 // MaterialUI Imports
 import { theme } from "./themes/theme.js";
-import { ThemeProvider } from "@material-ui/core";
+import { ThemeProvider, Typography } from "@material-ui/core";
 import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -28,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "100%",
     display: "flex",
     alignItems: "stretch",
+  },
+  fab: {
+    margin: theme.spacing(1),
+    "& > *": {
+      margin: theme.spacing(1),
+    },
   },
 }));
 
@@ -49,7 +63,17 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container className={`${classes.background} ${classes.main}`}>
-        <Landing state={state} dispatch={dispatch} />
+        <Router>
+          <Switch>
+            <Route path="/bio">
+              <Bio />
+            </Route>
+            <Route path="/">
+              <Landing state={state} dispatch={dispatch} />
+            </Route>
+          </Switch>
+          <FAB />
+        </Router>
       </Container>
     </ThemeProvider>
   );
