@@ -6,12 +6,15 @@ const useStyles = makeStyles((theme) => ({
     ...theme.surface,
     margin: theme.spacing(1),
     width: theme.spacing(64),
-    height: theme.spacing(64),
+    // height: theme.spacing(64),
+    maxWidth: "100%",
   },
   container: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    maxWidth: "100%",
+    margin: theme.spacing(1),
   },
   image: {
     maxWidth: "100%",
@@ -37,7 +40,7 @@ const ProjectCard = ({ repo }) => {
         className={classes.container}
         onClick={() => handleProjectClick(repo.homepage)}
       >
-        <h1 className={classes.text}>{repo.name}</h1>
+        <h2 className={classes.text}>{repo.name}</h2>
         <Typography className={classes.text}>{repo.description}</Typography>
         <img
           className={classes.image}

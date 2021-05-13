@@ -35,7 +35,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, {}, initState);
   const classes = useStyles();
 
-  useEffect(async () => {
+  useEffect(() => {
     // Get tweets and projects
     // Possibly subscribe to socket
     // github-npm api
@@ -43,8 +43,11 @@ function App() {
     // Make call for github user repos and repo information
 
     dispatch({ type: "getRepos" });
-    let repos = await getRepos();
-    dispatch({ type: "updateRepos", item: repos });
+    getRepos().then((repos) => {
+      dispatch({ type: "updateRepos", item: repos });
+    });
+
+    console.log(state);
   }, []);
 
   return (

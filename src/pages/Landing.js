@@ -32,12 +32,16 @@ const Landing = ({ state, dispatch }) => {
   console.log("repos?", state);
   const classes = useStyles();
   return state.loading ? (
-    <Loading />
+    <Container className={classes.main}>
+      <Loading />
+    </Container>
   ) : (
     <Container className={classes.main}>
       <Paper className={classes.surface}>
-        <h1>Welcome to my portfolio.</h1>
-        <Typography color="pallete.secondary">
+        <Typography>
+          <h1>Welcome to my portfolio.</h1>
+        </Typography>
+        <Typography>
           My name is Tyler, I am a full stack web developer.
         </Typography>
       </Paper>
