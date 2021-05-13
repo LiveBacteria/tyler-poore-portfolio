@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     ...theme.surface,
     margin: theme.spacing(1),
     width: theme.spacing(64),
-    // height: theme.spacing(64),
     maxWidth: "100%",
   },
   container: {
@@ -22,12 +21,16 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     maxWidth: "100%",
+    userSelect: "none",
+    pointerEvents: "none",
   },
   text: {
     fontFamily: theme.typography.fontFamily,
     color: theme.typography.color,
   },
-  // text: theme.typography,
+  subText: {
+    color: theme.typography.color,
+  },
 }));
 
 // Handle UI Events
@@ -47,15 +50,8 @@ const ProjectCard = ({ repo }) => {
         <Typography className={classes.text} variant="h4">
           {formatRepoName(repo.name)}
         </Typography>
-        <Typography className={classes.text}>{repo.description}</Typography>
-        <img
-          className={classes.image}
-          src={
-            repo.name === "tyler-poore-portfolio"
-              ? "https://raw.githubusercontent.com/LiveBacteria/tyler-poore-portfolio/master/Portfolio-Landing.png"
-              : "https://raw.githubusercontent.com/LiveBacteria/magic-researcher-game/master/MagicGame-Home.png"
-          }
-        />
+        <Typography className={classes.subText}>{repo.description}</Typography>
+        <img className={classes.image} src={repo.imageURL} />
       </Container>
     </Paper>
   );

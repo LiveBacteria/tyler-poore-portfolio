@@ -47,7 +47,7 @@ const Landing = ({ state, dispatch }) => {
       </Paper>
       {state.projects.length > 0 && typeof state.projects[0] !== "undefined"
         ? state.projects.map((repo, index) => {
-            return <ProjectCard repo={repo} />;
+            return <ProjectCard repo={repo} key={repo.id} />;
           })
         : ""}
     </Container>
