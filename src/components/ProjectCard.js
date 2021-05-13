@@ -48,14 +48,7 @@ const ProjectCard = ({ repo }) => {
           {formatRepoName(repo.name)}
         </Typography>
         <Typography className={classes.text}>{repo.description}</Typography>
-        <img
-          className={classes.image}
-          src={
-            repo.name === "tyler-poore-portfolio"
-              ? "https://raw.githubusercontent.com/LiveBacteria/tyler-poore-portfolio/master/Portfolio-Landing.png"
-              : "https://raw.githubusercontent.com/LiveBacteria/magic-researcher-game/master/MagicGame-Home.png"
-          }
-        />
+        <img className={classes.image} src={repo.imageURL} />
       </Container>
     </Paper>
   );
