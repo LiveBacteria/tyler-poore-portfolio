@@ -39,7 +39,7 @@ const FAB = () => {
   return (
     <Fab
       className={classes.fab}
-      color="secondary"
+      color="primary"
       aria-label="pageFlick"
       onClick={() => {
         handlePageFlick();
