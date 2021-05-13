@@ -38,10 +38,10 @@ const Landing = ({ state, dispatch }) => {
   ) : (
     <Container className={classes.main}>
       <Paper className={classes.surface}>
-        <Typography>
-          <h1>Welcome to my portfolio.</h1>
+        <Typography className={classes.text} variant="h2">
+          Welcome to my portfolio.
         </Typography>
-        <Typography>
+        <Typography variant="body">
           My name is Tyler, I am a full stack web developer.
         </Typography>
       </Paper>
