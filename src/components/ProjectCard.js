@@ -1,5 +1,9 @@
+// Material-UI Imports
 import { Container, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+
+// Helper Imports
+import { formatRepoName } from "../helpers/helpers";
 
 const useStyles = makeStyles((theme) => ({
   surface: {
@@ -40,7 +44,9 @@ const ProjectCard = ({ repo }) => {
         className={classes.container}
         onClick={() => handleProjectClick(repo.homepage)}
       >
-        <h2 className={classes.text}>{repo.name}</h2>
+        <Typography className={classes.text} variant="h4">
+          {formatRepoName(repo.name)}
+        </Typography>
         <Typography className={classes.text}>{repo.description}</Typography>
         <img
           className={classes.image}
