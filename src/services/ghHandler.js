@@ -2,7 +2,7 @@ import GitHub from "github-api";
 
 // Select specific repositories from my github
 const selectRepos = (allRepos) => {
-  let repos = allRepos.map((repo, index) => {
+  let repos = allRepos.map((repo) => {
     switch (repo.name) {
       case "team-blueberry":
         repo.imageURL =
@@ -48,13 +48,6 @@ const getRepos = async () => {
       allRepos.push(repo);
     }
   });
-
-  // Lists Hatchways repos
-  /*
-  hatchways.listStarredRepos((err, repos) => {
-    allRepos = repos;
-  });
-  */
 
   if (allRepos !== null && typeof allRepos !== "undefined") {
     return selectRepos(allRepos);

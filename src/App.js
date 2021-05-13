@@ -37,10 +37,6 @@ function App() {
 
   useEffect(() => {
     // Get tweets and projects
-    // Possibly subscribe to socket
-    // github-npm api
-    // setup env variables for api key and auth
-    // Make call for github user repos and repo information
 
     dispatch({ type: "getRepos" });
     getRepos().then((repos) => {
