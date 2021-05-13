@@ -1,3 +1,6 @@
+// React Imports
+import FAB from "../components/FAB";
+
 // MaterialUI Imports
 import { Container, Paper, Card, Typography, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -30,6 +33,7 @@ const Bio = ({ state, dispatch }) => {
   const classes = useStyles();
   return (
     <Container className={classes.main}>
+      <FAB />
       <Paper className={classes.surface}>
         <Typography variant="h1">Tyler Poore</Typography>
         <Typography variant="body1">

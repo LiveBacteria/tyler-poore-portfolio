@@ -1,3 +1,6 @@
+// React Imports
+import FAB from "../components/FAB";
+
 // MaterialUI Imports
 import { Container, Paper, Card, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -50,6 +53,7 @@ const Landing = ({ state, dispatch }) => {
             return <ProjectCard repo={repo} key={repo.id} />;
           })
         : ""}
+      <FAB />
     </Container>
   );
 };

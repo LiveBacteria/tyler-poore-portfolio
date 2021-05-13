@@ -1,4 +1,5 @@
 // React Imports, React Router Imports
+import { useState, useEffect } from "react";
 import { useHistory, useLocation, withRouter } from "react-router-dom";
 
 // Material-UI Imports
@@ -9,6 +10,9 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   fab: {
     margin: theme.spacing(1),
+    position: "fixed",
+    top: -5,
+    right: -5,
     "& > *": {
       margin: theme.spacing(1),
     },
@@ -18,14 +22,15 @@ const useStyles = makeStyles((theme) => ({
 const FAB = () => {
   const classes = useStyles();
   let history = useHistory();
+  let [pathName, setPathName] = useState();
+  let location = useLocation();
 
-  //   const usePathname = () => {
-  // const location = useLocation();
-  // return location.pathname;
-  //   };
+  useEffect(() => {
+    setPathName(location.pathname);
+  }, []);
 
   const handlePageFlick = () => {
-    if (window.location.pathname === "/") {
+    if (pathName === "/") {
       history.push("/bio");
     } else {
       history.push("/");
@@ -41,7 +46,7 @@ const FAB = () => {
       }}
     >
       <Typography className={classes.text}>
-        {window.location.pathname !== "/" ? "BIO" : "HOME"}
+        {pathName === "/bio" ? "HOME" : "BIO"}
       </Typography>
     </Fab>
   );

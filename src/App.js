@@ -20,6 +20,7 @@ import { theme } from "./themes/theme.js";
 import { ThemeProvider, Typography } from "@material-ui/core";
 import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -65,14 +66,13 @@ function App() {
       <Container className={`${classes.background} ${classes.main}`}>
         <Router>
           <Switch>
-            <Route path="/bio">
+            <Route exact path="/bio">
               <Bio />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Landing state={state} dispatch={dispatch} />
             </Route>
           </Switch>
-          <FAB />
         </Router>
       </Container>
     </ThemeProvider>
