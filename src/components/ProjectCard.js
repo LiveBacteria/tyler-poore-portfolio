@@ -45,7 +45,7 @@ const ProjectCard = ({ repo }) => {
     <Paper className={classes.surface}>
       <Container
         className={classes.container}
-        onClick={() => handleProjectClick(repo.homepage)}
+        onClick={() => handleProjectClick(repo.html_url)}
       >
         <Typography className={classes.text} variant="h4">
           {formatRepoName(repo.name)}
